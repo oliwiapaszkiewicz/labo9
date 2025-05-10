@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:labo9.ViewModels"
+        x:Class="labo9.Views.MainWindow"
+        Title="Wniosek o egzamin komisyjny" Width="600" Height="900">
+	<Window.DataContext>
+		<vm:MainViewModel />
+	</Window.DataContext>
+	<ScrollViewer>
+		<StackPanel Margin="20">
+			<TextBox Watermark="Numer albumu" Text="{Binding Request.StudentId}" />
+			<TextBox Watermark="Nazwisko i imię" Text="{Binding Request.FullName}" />
+			<TextBox Watermark="Semestr, rok" Text="{Binding Request.SemesterYear}" />
+			<TextBox Watermark="Kierunek i stopień" Text="{Binding Request.Major}" />
+			<TextBox Watermark="Przedmiot" Text="{Binding Request.Subject}" />
+			<TextBox Watermark="Punkty ECTS" Text="{Binding Request.ECTSPoints}" />
+			<TextBox Watermark="Prowadzący" Text="{Binding Request.Instructor}" />
+			<TextBox Watermark="Uzasadnienie" AcceptsReturn="True" Height="100" Text="{Binding Request.Justification}" />
+			<DatePicker SelectedDate="{Binding Request.SubmissionDate}" />
+			<TextBox Watermark="Podpis studenta" Text="{Binding Request.StudentSignature}" />
+			<TextBox Watermark="Członek komisji 1" Text="{Binding Request.CommissionMember1}" />
+			<TextBox Watermark="Członek komisji 2" Text="{Binding Request.CommissionMember2}" />
+			<TextBox Watermark="Członek komisji 3" Text="{Binding Request.CommissionMember3}" />
+			<TextBox Watermark="Decyzja dziekana" Text="{Binding Request.DeanDecision}" />
+			<DatePicker SelectedDate="{Binding Request.DecisionDate}" />
+			<Button Content="Zapisz" Command="{Binding SaveCommand}" />
+			<Button Content="Eksportuj" Command="{Binding ExportCommand}" Margin="0,10,0,0"/>
+			<Button Content="Importuj" Command="{Binding ImportCommand}" Margin="0,5,0,0"/>
+		</StackPanel>
+	</ScrollViewer>
+</Window>
