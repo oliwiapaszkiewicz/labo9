@@ -52,11 +52,11 @@ namespace labo9.ViewModels
             {
                 _databaseService.ImportFromCsv(filePath);
                 LoadAll();
-                Console.WriteLine($"Import zakończony z pliku: {filePath}");
+                Console.WriteLine($"Import: {filePath}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Błąd importu: " + ex.Message);
+                Console.WriteLine("Blad: " + ex.Message);
             }
         }
 
@@ -68,11 +68,11 @@ namespace labo9.ViewModels
             try
             {
                 _databaseService.ExportToCsv(filePath);
-                Console.WriteLine($"Eksport zakończony: {filePath}");
+                Console.WriteLine($"Eksport: {filePath}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Błąd eksportu: " + ex.Message);
+                Console.WriteLine("Blad: " + ex.Message);
             }
         }
 
@@ -92,7 +92,7 @@ namespace labo9.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Błąd zapisu: " + ex.Message);
+                Console.WriteLine("Blad: " + ex.Message);
             }
         }
 
