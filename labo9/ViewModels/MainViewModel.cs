@@ -83,7 +83,6 @@ namespace labo9.ViewModels
                 _databaseService.SaveRequest(Request);
                 LoadAll();
 
-                // Reset formularza
                 Request = new ExamRequest
                 {
                     SubmissionDate = DateTime.Now,
